@@ -1,0 +1,163 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #16110c;       /* Main dark espresso canvas */
+  --bg-surface: #211912;       /* Subtle elevated surface / ghost card */
+
+  /* Brand & Accents */
+  --accent-gold: #c9a679;      /* Brand logo ("WoodForma") and hover highlights */
+  --accent-wood: #8c5e35;      /* Secondary warm wood tone */
+
+  /* Typography */
+  --text-primary: #f5f0eb;     /* Main heading ("Sculptural Elegance & Comfort") */
+  --text-secondary: #a89f96;   /* Subtext paragraph and active nav links */
+  --text-muted: #787068;       /* Inactive nav links and subtle icons */
+
+  /* Borders & Interactive */
+  --border-subtle: #3d332a;    /* Button border, social circles, and dividers */
+  --btn-hover-bg: #261e17;     /* Button hover fill */
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+.main_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1rem;
+  padding: 2rem 3rem;
+  background-color: var(--bg-primary);
+}
+
+/* Brand Logo (if it's an a, span, or h2 inside .main_header) */
+.main_header > :first-child {
+  color: var(--accent-gold);
+}
+
+.nav_lists {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.main_header a {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.main_header a:hover,
+.main_header a.active {
+  color: var(--text-primary);
+}
+
+.main_section {
+  height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 0.3rem;
+}
+
+.main_selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  height: 80%;
+  padding: 1.5rem 3rem;
+}
+
+.message {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message h1 {
+  font-size: 2.3rem;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.message p {
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 2;
+}
+
+.some_button {
+  align-self: flex-start;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.some_button:hover {
+  background-color: var(--btn-hover-bg);
+  border-color: var(--accent-gold);
+}
+
+.nonexistent {
+  background: transparent;
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  z-index: 2;
+}
+
+.non-balls {
+  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  color: var(--text-muted);
+  border-radius: 999px;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.non-balls:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.imagery {
+  position: relative;
+  background: transparent;
+  height: 100%;
+  flex: 1;
+}
+
+.imagery h4 {
+  position: absolute;
+  border: 1px solid rgba(201, 166, 121, 0.2); /* Subtle gold hairline border */
+  height: 400px;
+  width: 400px;
+  background-color: rgba(33, 25, 18, 0.45); /* Translucent espresso glass instead of flat grey */
+  backdrop-filter: blur(4px);
+  left: -100px;
+  z-index: 1;
+}
